@@ -15,7 +15,7 @@ class GameController {
         val tryNumber: Int = readln().toInt()
         println()
         println("실행결과")
-        tryCount(tryNumber)
+        tryMoving(tryNumber)
 
         winGame()
     }
@@ -26,7 +26,7 @@ class GameController {
         gamingCars = GamingCars(Cars)
     }
 
-    fun tryCount(tryNumber: Int) {
+    fun tryMoving(tryNumber: Int) {
         for (i in 1..tryNumber) {
             gamingCars.movingForward()
             gamingCars.cars.forEach {

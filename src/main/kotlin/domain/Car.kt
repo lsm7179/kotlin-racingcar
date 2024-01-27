@@ -1,16 +1,12 @@
 package domain
 
+private const val LIMIT_NAME_LENGTH_NUMBER = 5
+private const val FORWARD_STANDARD_NUMBER = 4
+
 class Car(val name: String, var distance: Int = 0) {
 
-    companion object {
-        private const val LIMIT_NAME_LENGTH_NUMBER = 5
-        private const val FORWARD_STANDARD_NUMBER = 4
-    }
-
     init {
-        if (name.length > LIMIT_NAME_LENGTH_NUMBER) {
-            throw IllegalArgumentException("차 이름은 5글자를 초과 할 수 없다.")
-        }
+        require(name.length <= LIMIT_NAME_LENGTH_NUMBER) { "차 이름은 ${LIMIT_NAME_LENGTH_NUMBER}글자를 초과 할 수 없다." }
     }
 
     fun movingForward(forwardNumber: Int) {

@@ -1,6 +1,6 @@
 import controller.GameController
+import service.GameService
 
 fun main() {
-    val gameController = GameController();
-    gameController.gaming()
+    GameController(GameService()).gaming()
 }
